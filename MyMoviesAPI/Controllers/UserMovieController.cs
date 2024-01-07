@@ -37,7 +37,7 @@ namespace MyMoviesAPI.Controllers
                 return BadRequest($"Failed to retrieve users movies due to unknown reason.");
             }
         }
-        // DELETE api/UserMovie?movieid={movieId}&userid={userId}
+        // DELETE api/UserMovie?movieTmdbId={movieTmdbId}&userId={userId}
         [HttpDelete]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
@@ -128,7 +128,7 @@ namespace MyMoviesAPI.Controllers
                             UserMovie newUserMovie = new UserMovie()
                             {
                                 User = userFromDB,
-                                Movie = movie
+                                Movie = movieFromDB
                             };
 
                             return _agent.AddEntity(newUserMovie) ? Ok("Movie added to users movies.") : BadRequest("Failed to add movie to users movies.");
