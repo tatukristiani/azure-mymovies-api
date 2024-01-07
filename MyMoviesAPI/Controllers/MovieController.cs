@@ -33,7 +33,7 @@ namespace MyMoviesAPI.Controllers
         {
             try
             {
-                if (_agent.MovieExists(movie.Title, movie.TmdbId))
+                if (_agent.MovieExists(movie.TmdbId))
                 {
                     return BadRequest($"Failed to add movie. Movie already exists.");
                 }

@@ -69,9 +69,9 @@ namespace MyMoviesAPI.Data
             return _context.User.FirstOrDefault(user => user.Email == email);
         }
 
-        public bool MovieExists(string movieTitle, string tmdbId)
+        public bool MovieExists(string tmdbId)
         {
-            return (_context.Movie?.Any(e => e.Title == movieTitle || e.TmdbId == tmdbId)).GetValueOrDefault();
+            return (_context.Movie?.Any(e => e.TmdbId == tmdbId)).GetValueOrDefault();
         }
 
         public bool RemoveMovieFromUser(int movieTmdbId, int userId)

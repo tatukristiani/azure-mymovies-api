@@ -96,7 +96,7 @@ namespace MyMoviesAPI.Controllers
         {
             try
             {
-                var movieExists = _agent.MovieExists(movie.Title, movie.TmdbId);
+                var movieExists = _agent.MovieExists(movie.TmdbId);
                 var userFromDB = _agent.GetUserById(userId);
 
                 if (userFromDB != null)

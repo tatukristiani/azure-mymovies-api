@@ -13,7 +13,7 @@ namespace MyMoviesAPI.Data
         User? GetUserByUsername(string username);
         User? GetUserByEmail(string email);
         bool UserExists(string username, string email);
-        bool MovieExists(string movieTitle, string tmdbId);
+        bool MovieExists(string tmdbId);
         bool RemoveMovieFromUser(int movieId, int userId);
         List<PasswordResetRequest> GetPasswordResetRequests(string id);
         bool AddEntity(object model);
