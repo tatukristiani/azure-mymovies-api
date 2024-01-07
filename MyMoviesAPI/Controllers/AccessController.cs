@@ -46,7 +46,7 @@ namespace MyMoviesAPI.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to retrieve user. Error: {ex}");
-                return Unauthorized();
+                return Unauthorized("Error: " + ex);
             }
         }
 

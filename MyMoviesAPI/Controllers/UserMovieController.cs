@@ -33,8 +33,8 @@ namespace MyMoviesAPI.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to remove movie. Error: {ex}");
-                return BadRequest($"Failed to remove movie due to unknown reason.");
+                _logger.LogError($"Failed to retrieve users movies. Error: {ex}");
+                return BadRequest($"Failed to retrieve users movies due to unknown reason.");
             }
         }
         // DELETE api/UserMovie?movieid={movieId}&userid={userId}
