@@ -26,8 +26,6 @@ namespace MyMoviesAPI.Controllers
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
 
-        private string forgotPasswordURL = "http://localhost:3000/forgot-password";
-
         public UserController(IDatabaseAgent agent, ILogger<MovieController> logger, IMapper mapper, IConfiguration configuration)
         {
             _agent = agent;
@@ -59,7 +57,7 @@ namespace MyMoviesAPI.Controllers
                     _agent.AddEntity(req);
 
                     // Send email with the link to change the password
-                    MailSender.SendPasswordResetMail(email, forgotPasswordURL + "?id=" + requestID);
+                    MailSender.SendPasswordResetMail(email, Environment.GetEnvironmentVariable("MYMOVIE_FORGOT_PASSWORD_URL") + requestID);
                 }
 
                 return Ok("The password reset link was sent to the provided email address if the user exists.");
