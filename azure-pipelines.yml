@@ -4,9 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 pool:
-  name: 'Self Hosted Agent Pool'
+  name: Self Hosted Agent Pool
   demands:
-  - agent.name equals 'az-agent-tatupc-api'
+  - agent.name -equals az-agent-tatupc-api
 
 variables:
   buildConfiguration: 'Release'
