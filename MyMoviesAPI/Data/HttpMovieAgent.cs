@@ -97,11 +97,11 @@ namespace MyMoviesAPI.Data
         private async static Task<IEnumerable<MovieDTO>?> HttpFetchMultiplePagesOfMovies(int page, string url, int? genreCode)
         {
             List<string> urls = new List<string>();
-            int endPage = page * 4 + page;
-            int startPage = endPage - 4;
+            int endPage = page * 4;
+            int startPage = endPage - 3;
             List<MovieDTO>? movies = new List<MovieDTO>();
 
-            for (int currentPage = startPage; currentPage < endPage; currentPage++)
+            for (int currentPage = startPage; currentPage <= endPage; currentPage++)
             {
                 urls.Add(url.Replace("${page}", currentPage.ToString()).Replace("${genreCode}", genreCode.ToString()));
             }
