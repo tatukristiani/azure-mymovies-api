@@ -20,7 +20,7 @@ namespace MyMoviesAPI.Utility
                 mailMessage.From = new MailAddress(senderEmail);
                 mailMessage.To.Add(email);
                 mailMessage.Subject = "Hello from MyMovies";
-                mailMessage.Body = $"You've reqeusted to reset your password and this is why you've received this email.\nFollow this link {passwordResetLink} to reset your password.\n\nIf you did not make this request then we highly recommend to remove this email.";
+                mailMessage.Body = $"You've requested to reset your password and this is why you've received this email.\nFollow this link {passwordResetLink} to reset your password.\n\nIf you did not make this request then we highly recommend to remove this email.";
                 return smtpClient.SendMailAsync(mailMessage);
         }
     }
